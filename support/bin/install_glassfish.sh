@@ -98,14 +98,17 @@ tar cf $PASSWORD_TAR_FILE $PASSWORD_FILES
 #echo "Changing master password ['changeit']:"
 #$ASADMIN_CMD change-master-password --savemasterpassword=true $PAYARA_DOMAIN_NAME || exit 1
 
-# Read new master password
-echo
-echo "Changing master password"
-sttyOrig=`stty -g`
-stty -echo
-read -p "Enter master password: " MASTER_PASSWORD
-stty $sttyOrig
-echo
+
+if [ -z ${MASTER_PASSWORD} ]; then
+    # Read new master password
+    echo
+    echo "Changing master password"
+    sttyOrig=`stty -g`
+    stty -echo
+    read -p "Enter master password: " MASTER_PASSWORD
+    stty $sttyOrig
+    echo
+fi
 
 # Change master password
 tmpFile=/tmp/`basename $0`.`id -u`.tmp
@@ -127,14 +130,16 @@ echo
 echo "Starting glassfish"
 $ASADMIN_CMD start-domain $PAYARA_DOMAIN_NAME
 
-# read new glassfish admin password
-echo
-echo "Changing admin password"
-sttyOrig=`stty -g`
-stty -echo
-read -p "Enter glassfish admin password: " ADMIN_PASSWORD
-stty $sttyOrig
-echo
+if [ -z ${ADMIN_PASSWORD} ]; then
+    # read new glassfish admin password
+    echo
+    echo "Changing admin password"
+    sttyOrig=`stty -g`
+    stty -echo
+    read -p "Enter glassfish admin password: " ADMIN_PASSWORD
+    stty $sttyOrig
+    echo
+fi
 
 # change admin password
 eval "cat $glassfishAdminPasswordExpectScript | sed 's?OLD_PASSWORD??' | sed 's?ADMIN_PASSWORD?$ADMIN_PASSWORD?' > $tmpFile"

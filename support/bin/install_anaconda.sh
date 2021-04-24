@@ -3,7 +3,7 @@
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
 
-ANACONDA_VERSION=2020.02
+ANACONDA_VERSION=3.8.3
 
 CDB_HOST_ARCH=$(uname -sm | tr -s '[:upper:][:blank:]' '[:lower:][\-]')
 
@@ -13,11 +13,11 @@ cd `dirname $0`/.. && topDir=`pwd`
 srcDir=$topDir/src
 buildDir=$topDir/build
 anacondaInstallDir=$topDir/anaconda/$CDB_HOST_ARCH
-anacondaFileName="Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh"
+anacondaFileName="Miniconda3-${ANACONDA_VERSION}-Linux-x86_64.sh"
 
 echo $anacondaFileName
 
-DOWNLOAD_URL="https://repo.anaconda.com/archive/$anacondaFileName"
+DOWNLOAD_URL="https://repo.anaconda.com/miniconda/$anacondaFileName"
 
 mkdir -p $srcDir
 cd $srcDir
@@ -26,13 +26,11 @@ if [ ! -f $anacondaFileName ]; then
     echo "Retrieving $DOWNLOAD_URL"
     curl -o $anacondaFileName $DOWNLOAD_URL
 fi
-
+set -x
 if [ -f $anacondaFileName ]; then
-    help=-h
-    batch=-b
-    skip=-s
     path="-p $anacondaInstallDir"
 
     echo "Installing anaconda"
-    sh $anacondaFileName $batch $skip $path
+    sh $anacondaFileName -b $path -f
 fi
+set +x
