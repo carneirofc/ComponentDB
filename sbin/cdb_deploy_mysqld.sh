@@ -60,7 +60,7 @@ setRootPassword=false
 if [ ! -f $CDB_MYSQLD_CONFIG_FILE ]; then
     echo "Generating service config file"
     if [ -z $CDB_DB_HOST ]; then
-        CDB_DB_HOST=127.0.0.1
+        CDB_DB_HOST=localhost
         read -p "Please specify the MYSQL_DB_HOST: [$CDB_DB_HOST]" dbHost
         if [ ! -z $dbHost ]; then
             CDB_DB_HOST=$dbHost

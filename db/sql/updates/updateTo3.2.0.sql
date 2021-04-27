@@ -3,7 +3,7 @@
 -- See LICENSE file.
 --
 
--- Execute by running `mysql CDB_DB_NAME --host=127.0.0.1 --user=cdb -p < updateTo3.2.0.sql` 
+-- Execute by running `mysql CDB_DB_NAME --host=localhost --user=cdb -p < updateTo3.2.0.sql` 
 
 select @domainId:=id
 from domain 

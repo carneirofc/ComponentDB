@@ -16,10 +16,10 @@
 CDB_DB_NAME=cdb
 CDB_DB_OWNER=cdb
 CDB_DB_OWNER_PASSWORD=cdb
-CDB_DB_HOST=127.0.0.1
+CDB_DB_HOST=localhost
 CDB_DB_PORT=3306
 CDB_DB_ADMIN_USER=root
-CDB_DB_ADMIN_HOSTS="127.0.0.1 bluegill1.aps.anl.gov gaeaimac.aps.anl.gov visa%.aps.anl.gov"
+CDB_DB_ADMIN_HOSTS="localhost"
 CDB_DB_ADMIN_PASSWORD=
 CDB_DB_CHARACTER_SET=utf8
 

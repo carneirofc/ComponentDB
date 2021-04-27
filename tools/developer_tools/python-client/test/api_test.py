@@ -25,7 +25,7 @@ class MyTestCase(unittest.TestCase):
     SAMPLE_DOC_PATH = './data/CdbSchema-v3.0-3.pdf'
 
     def setUp(self):
-        self.factory = CdbApiFactory('http://127.0.0.1:8080/cdb')
+        self.factory = CdbApiFactory('http://localhost:8080/cdb')
         # TESTS AS ADMIN / TESTS AS USER
         self.itemApi = self.factory.itemApi
         self.locationApi = self.factory.locationItemApi
