@@ -28,9 +28,6 @@ support:
 support-clean-all:
 	$(TOP)/sbin/cdb_install_support_clean_all.sh
 
-support-anaconda:
-	$(TOP)/sbin/cdb_install_support_anaconda.sh
-
 support-java:
 	$(TOP)/sbin/cdb_install_support_java_packages.sh
 
