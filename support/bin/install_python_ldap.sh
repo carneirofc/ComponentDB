@@ -21,4 +21,4 @@ export PATH=$pythonInstallDir/lib:$PATH
 export LD_LIBRARY_PATH=$pythonInstallDir/lib:$LD_LIBRARY_PATH
 cd $buildDir
 echo Installing python ldap
-easy_install python_ldap || exit 1
+pip install python-ldap || exit 1

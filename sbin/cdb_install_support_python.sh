@@ -2,9 +2,7 @@
 
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
-
 set -ex
-
 
 MY_DIR=`dirname $0` && cd $MY_DIR && MY_DIR=`pwd`
 if [ -z "${CDB_ROOT_DIR}" ]; then
@@ -43,7 +41,7 @@ execute cp -R $CDB_ROOT_DIR/support $CDB_SUPPORT_DIR
 cd $CDB_SUPPORT_DIR
 echo "Building support in $PWD"
 
-execute $CDB_SUPPORT_DIR/bin/install_all_anaconda.sh
+execute $CDB_SUPPORT_DIR/bin/install_python.sh
 
 if [ ! -d $CDB_DATA_DIR ]; then
     echo "Creating data directories in $CDB_DATA_DIR"

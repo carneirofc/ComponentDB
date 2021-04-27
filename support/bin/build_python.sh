@@ -37,7 +37,7 @@ if [ -f $pythonInstallFileName ]; then
     tar zxf $srcDir/$pythonInstallFileName
     cd $pythonBuildDir
     ./configure --prefix=$pythonInstallDir || exit 1
-    make || exit 1
+    make -j $(nproc) || exit 1
     make install || exit 1
 else
     echo "File $srcDir/$pythonInstallFileName not found."

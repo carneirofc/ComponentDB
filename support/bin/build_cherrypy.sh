@@ -3,6 +3,7 @@
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
 
+set -xe
 
 # Need to update pypi Download URL manually upon version update
 CHERRY_PY_VERSION=8.1.2

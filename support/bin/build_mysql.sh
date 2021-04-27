@@ -3,6 +3,8 @@
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
 
+set -ex
+
 
 MYSQL_VERSION=5.6.37
 MYSQL_TGZ_FILE=mysql-$MYSQL_VERSION.tar.gz
@@ -39,7 +41,7 @@ if [ -f $MYSQL_TGZ_FILE ]; then
     tar zxf $srcDir/$MYSQL_TGZ_FILE
     cd $mysqlBuildDir
     cmake -DCMAKE_INSTALL_PREFIX:PATH=$mysqlInstallDir
-    make || exit 1
+    make -j$(nproc) || exit 1
     make install || exit 1   
     cd $topDir
 else

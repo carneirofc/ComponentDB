@@ -2,6 +2,7 @@
 
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
+set -ex
 
 ANACONDA_VERSION=3.8.3
 
@@ -25,12 +26,19 @@ cd $srcDir
 if [ ! -f $anacondaFileName ]; then
     echo "Retrieving $DOWNLOAD_URL"
     curl -o $anacondaFileName $DOWNLOAD_URL
+    ls -la
 fi
-set -x
 if [ -f $anacondaFileName ]; then
     path="-p $anacondaInstallDir"
+    mkdir -p ${anacondaInstallDir}
 
     echo "Installing anaconda"
-    sh $anacondaFileName -b $path -f
+    bash ./$anacondaFileName -b $path -f
+    export PATH="${anacondaInstallDir}/bin:$PATH"
+    ls -l ${anacondaInstallDir}/bin
+    conda install pip -y
 fi
-set +x
+
+pip install click
+
+

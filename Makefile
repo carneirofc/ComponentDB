@@ -35,6 +35,9 @@ support-java:
 	$(TOP)/sbin/cdb_install_support_java_packages.sh
 
 support-python:
+	$(TOP)/sbin/cdb_install_support_python.sh
+
+support-python-packages:
 	$(TOP)/sbin/cdb_install_support_python_packages.sh
 
 support-mysql:
