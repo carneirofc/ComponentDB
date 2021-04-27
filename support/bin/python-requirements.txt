@@ -25,7 +25,6 @@ readme-renderer==28.0
 repoze.lru==0.7
 requests-toolbelt==0.9.1
 requests==2.25.0
-setuptools-scm==5.0.2
 six==1.15.0
 snowballstemmer==2.0.0
 sphinxcontrib-websupport==1.1.2
