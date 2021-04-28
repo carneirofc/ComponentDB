@@ -3,6 +3,8 @@
 # Copyright (c) UChicago Argonne, LLC. All rights reserved.
 # See LICENSE file.
 
+set -ex
+
 
 #
 # Script used for creating CDB database
@@ -173,6 +175,7 @@ if [ "$3" == "1" ]; then
 fi
 
 function executePopulateScripts {
+    echo "Scripts at $(pwd)"
     for dbTable in $1; do
         dbFile=populate_$dbTable.sql
         if [ -f $dbFile ]; then
