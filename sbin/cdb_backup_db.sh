@@ -60,7 +60,6 @@ fi
 
 # Second argument overrides directory with db population scripts
 timestamp=`date +%Y%m%d_%H%M%S`
-#timestamp=`date +%Y%m%d`
 CDB_BACKUP_DIR=$2
 if [ -z $CDB_BACKUP_DIR ]; then
     CDB_BACKUP_DIR=$CDB_INSTALL_DIR/backup/$CDB_DB_NAME/$timestamp
