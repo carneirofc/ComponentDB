@@ -23,7 +23,7 @@ Disable ssl checks
 import cdbApi
 
 configuration = cdbApi.Configuration(
-    host = "http://localhost"
+    host = "https://localhost:8181/cdb"
 )
 configuration.verify_ssl = False
 ```
