@@ -14,15 +14,15 @@ In order to deploy or develop Component DB, you must have some support software 
 
 # Deployment
 
-[**Deployment Procedure:**](./docs/DEPLOYMENT.md)
+[**Deployment Procedure**](./docs/DEPLOYMENT.md)
 
 # Development 
 
-[**Development Procedure:**](./docs/DEVELOPMENT.md)
+[**Development Procedure**](./docs/DEVELOPMENT.md)
 
 ## Python API Client
 
-[**Python Client:**](./docs/CLIENT.md)
+[**Python Client**](./docs/CLIENT.md)
 
 # License
 [Copyright (c) UChicago Argonne, LLC. All rights reserved.](https://github.com/AdvancedPhotonSource/ComponentDB/blob/master/LICENSE)
