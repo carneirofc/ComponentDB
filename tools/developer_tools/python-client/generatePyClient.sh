@@ -31,9 +31,14 @@ CDB_OPENAPI_YML_URL="$1/$CDB_OPENAPI_YML_PATH"
 
 cd $ROOT_DIR
 
+OPENAPI_YML="./openapi.yaml"
+
+[ -f "${OPENAPI_YML}" ] && rm -fv ${OPENAPI_YML}
+curl -v -k ${CDB_OPENAPI_YML_URL} -o ${OPENAPI_YML}
+
 [ ! -f "${OPEN_API_GENERATOR_JAR}" ] && curl -O $OPEN_API_GENERATOR_JAR_URL
 
-java -jar $OPEN_API_GENERATOR_JAR  generate -i "$CDB_OPENAPI_YML_URL" -g python -o $GEN_OUT_DIR -c $GEN_CONFIG_FILE_PATH
+java -jar $OPEN_API_GENERATOR_JAR  generate -i ${OPENAPI_YML} -g python -o $GEN_OUT_DIR -c $GEN_CONFIG_FILE_PATH
 
 # Clean up
 rm cdbApi -rv

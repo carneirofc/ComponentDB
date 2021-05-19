@@ -107,5 +107,16 @@ Once netbeans is open a few steps need to be taken to prepare netbeans for CDB d
     # For web service development (Use your favorite python editor) to test run web service using:
     ./sbin/cdbWebService.sh
     
+## Python API Client
+
+```bash
+conda install -c conda-forge openjdk=11.0.9.1
+cd tools/developer_tools/python-client
+./generatePyClient.sh <cdb_server_url>
+# More instructions at ./pythonApi/README.md
+cd pythonApi
+python setup.py install --user
+```
+
 # License
 [Copyright (c) UChicago Argonne, LLC. All rights reserved.](https://github.com/AdvancedPhotonSource/ComponentDB/blob/master/LICENSE)
