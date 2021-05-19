@@ -25,7 +25,7 @@ import cdbApi
 configuration = cdbApi.Configuration(
     host = "http://localhost"
 )
-configuration.verify_ssl = True
+configuration.verify_ssl = False
 ```
 
 # License
